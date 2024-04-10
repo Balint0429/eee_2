@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserAuthService } from '../user-auth.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { VerifyPayload } from '../user';
 
 @Component({
@@ -12,6 +12,7 @@ export class VerifyComponent implements OnInit {
   code: string = '';
   isSubmitting: boolean = false;
   validationErrors: any = [];
+  verificationSuccess: boolean = false; // Track verification success
 
   constructor(public userAuthService: UserAuthService, private router: Router) { }
 
@@ -21,12 +22,13 @@ export class VerifyComponent implements OnInit {
 
   verifyAccount() {
     this.isSubmitting = true;
-    let payload: any= {
+    let payload: VerifyPayload= {
       code: this.code,
     };
     this.userAuthService.verifyAccount(payload)
       .then(({ data }) => {
         localStorage.setItem('token', data.token);
+        this.verificationSuccess = true;
         this.router.navigateByUrl('/home');
         return data;
       })

@@ -20,9 +20,7 @@ export class RegisterComponent implements OnInit {
   constructor(public userAuthService: UserAuthService, private router: Router) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('token') !== "" && localStorage.getItem('token') !== null) {
-      this.router.navigateByUrl('/verify');
-    }
+    
   }
 
   registerAction() {

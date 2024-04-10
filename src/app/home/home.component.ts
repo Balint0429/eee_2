@@ -14,7 +14,7 @@ export class HomeComponent {
     'brand5.jpg',
   ];
   products = [
-    { name: 'Product 1', description: 'Alkamasz városi ingázásra és kényelmes ', price: 19.99, image: 'kerekpar1.jpg' },
+    { name: 'Bicó', description: 'Alkamasz városi ingázásra és kényelmes ', price: 19.99, image: 'kerekpar1.jpg' },
     { name: 'Product 2', description: 'Erős és strapabíró kerékpár túrázáshoz', price: 299.99, image: 'kerekpar2.jpg' },
     { name: 'Product 3', description: 'Könnyű és gyors városi bringa', price: 149.99, image: 'kerekpar1.jpg' },
     { name: 'Product 4', description: 'Robusztus hegyi kerékpár extrém terepre', price: 499.99, image: 'kerekpar2.jpg' },

@@ -1,13 +1,14 @@
-<nav class="navbar navbar-expand-lg bg-orange">
-  <div>
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="/home">Home</a>
+<nav class="navbar navbar-expand-lg ">
+  <div class="container">
+    <div class="navbar-nav ml-lg-auto ml-md-4">
+      <a class="navbar-logo" routerLink="/home">
+        <img src="assets/boltkepek/ISA.png">
+      </a>
+      <a class="nav-item nav-link" routerLink="/home">Főoldal</a>
       <a class="nav-item nav-link" routerLink="/biciklik">Kerékpárok</a>
-      <a class="nav-item nav-link" routerLink="/alkatreszek">Alkatrészek</a>
-      <a class="nav-item nav-link" routerLink="/kiegeszitok">Kiegészítők</a>
       <a class="nav-item nav-link" routerLink="/szerviz">Szerviz</a>
-      <a class="nav-item nav-link" routerLink="/rolunk">Rolunk</a>
-      <a class="nav-item nav-link" (click)="logout()">Login</a>
+      <a class="nav-item nav-link" routerLink="/rolunk">Rólunk</a>
+      <a class="nav-item nav-link" routerLink="/login" (click)="logout()">Bejelentkezés</a>
     </div>
   </div>
 </nav>

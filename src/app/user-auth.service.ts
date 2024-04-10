@@ -6,8 +6,13 @@ import { RegistrationPayload, VerifyPayload, LoginPayload} from './user';
   providedIn: 'root'
 })
 export class UserAuthService {
+  private baseURL: string = 'http://127.0.0.1:8000/api';
 
   constructor() { }
+
+  setBaseURL(url: string) {
+    this.baseURL = url;
+  }
 
   login(data: any): Promise<any> {
     let payload = {
@@ -15,7 +20,7 @@ export class UserAuthService {
       password: data.password
     };
 
-    return axios.post('http://172.16.16.157:8000/api/login', payload);
+    return axios.post(this.baseURL + '/login', payload);
   }
  
   register(data: RegistrationPayload): Promise<any> {
@@ -27,7 +32,7 @@ export class UserAuthService {
       password: data.password,
     };
 
-    return axios.post('http://172.16.16.157:8000/api/registration', payload);
+    return axios.post(this.baseURL + '/registration', payload);
   }
 
   verifyAccount(data: VerifyPayload): Promise<any> {
@@ -35,6 +40,6 @@ export class UserAuthService {
         code: data.code,
     };
 
-    return axios.put('http://172.16.16.157:8000/api/verify', payload);
+    return axios.put(this.baseURL + '/verify', payload);
   }
 }

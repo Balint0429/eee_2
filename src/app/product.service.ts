@@ -6,11 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  url = 'http://localhost:3000/termekek';
 
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<any[]> {
-    return this.http.get<any[]>(this.url);
+    return this.http.get<any[]>("http://127.0.0.1:8000/api/termekek/100");
   }
 }
